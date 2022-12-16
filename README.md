@@ -1,2 +1,1 @@
-# blog-M
 # website-M
