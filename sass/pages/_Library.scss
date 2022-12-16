@@ -2,7 +2,7 @@
 @use '../helper/mixin' as *;
 
 .bannerCrumb2 {
-    background: url("/assets/img/book/bannerBook.jpg") no-repeat fixed center;
+    background: url("../assets/img/book/bannerBook.jpg") no-repeat fixed center;
     background-size: cover;
 }
 

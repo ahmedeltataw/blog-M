@@ -3,7 +3,7 @@
 footer{
     .footer{
         @include section(60vh);
-        background: url('/assets/img/footer/footer-bg-map.png') no-repeat center fixed $main;
+        background: url('../assets/img/footer/footer-bg-map.png') no-repeat center fixed $main;
         background-size: cover;
         .infoWeb{
             text-align: center;

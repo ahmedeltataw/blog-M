@@ -79,46 +79,6 @@ $(document).ready(function () {
     $('.bookRead').removeClass("active")
   })
   // rate
-  function rate() {
-    $(".my-rating").starRating({
-    initialRating: 0,
-    disableAfterRate: true,
-    starSize: 40,
-    strokeWidth: 20,
-    hoverColor: "#ffb400",
-    activeColor: "#ffb400",
-    useGradient: false,
-    starShape: 'rounded',
-    strokeColor: '#ffb400',
-    emptyColor: 'transparent',
-    ratedColor: '#ffb400',
-    ratedColors: ['#ffb400', '#ffb400', '#ffb400', '#ffb400', '#ffb400'],
-    useFullStars: true,
-    setReadOnly: false,
-    onHover: function(currentIndex, currentRating, $el){
-      // $('.live-rating').text(currentIndex);
-      var rateValue = ["ضعيف جدا" , "ضعيف" , "جيد" , "جيد جداً" , "ممتاز" ,"" ]
-      if (currentIndex == 1) {
-          $('.live-rating').text(rateValue[0]);
-        } else if (currentIndex == 2) {
-          $('.live-rating').text(rateValue[1]);
-        } else if (currentIndex == 3) {
-          $('.live-rating').text(rateValue[2]);
-        } else if (currentIndex == 4) {
-          $('.live-rating').text(rateValue[3]);
-        } else if (currentIndex == 5) {
-          $('.live-rating').text(rateValue[4]);
-        }
-      
-      
-    },
-    onLeave: function(currentIndex, currentRating, $el){
-      $('.live-rating').text('');
-      
-    }
-
-  });
-  }
   
   // filter
   function filter(){
@@ -149,19 +109,8 @@ $(document).ready(function () {
   }
   like();
   // 
-  $(".partLibrary").offset().top
-  console.log($(".partLibrary").offset().top)
-  function scrollTop () {
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= $(".partLibrary").offset().top - 300  ) {
-        $(".biggerBall .bigball").addClass("active");
-        console.log("sfaff")
-      } else {
-        $(".biggerBall .bigball").removeClass("active");
-      }
-    })
-  }
-  scrollTop();
+
+
 })
 // 
 
