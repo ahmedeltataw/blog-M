@@ -10,7 +10,7 @@
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
-
+    background-color: #a0a0a0;
     &::before {
         @include overlay($color: $main, $alpha: .6);
     }
