@@ -1,0 +1,280 @@
+@use '../helper/colors' as *;
+@use '../helper/mixin' as *;
+
+.bannerCrumb {
+    @include section(70vh);
+    background: url("/assets/img/food-bg.png") no-repeat center fixed;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+        @include overlay($color: $main, $alpha: .6);
+        // margin-bottom: 10vh;
+    }
+
+    // margin-bottom: 10vh;
+
+    .breadcrumb {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        width: 100%;
+
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            padding-bottom: 3vh;
+            @media (max-width:570px){
+                font-size: 1.6rem;
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            li {
+                color: rgb(208, 208, 208);
+                font-size: 1.4rem;
+                padding: 0px 5px;
+                @media (max-width:570px) {
+                        font-size: 1.2rem;
+                    }
+
+                a {
+                    color: rgb(224, 224, 224);
+                    transition: $transition;
+
+                    &:hover {
+                        color: $hover;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+// sectionFood
+.sectionFood {
+    @include section(100vh);
+    background: linear-gradient(90deg, hsla(180, 22%, 93%, 1) 0%, hsla(315, 75%, 97%, 1) 100%);
+    margin-bottom: 5vh;
+    .foodBox {
+        margin-bottom: 3vh;
+        background-color: #fff;
+        box-shadow: $boxShadow;
+        border-radius: 15px;
+        // min-height: 200px;
+        // width: 300px;
+        position: relative;
+        // overflow: hidden;
+        padding: 10px;
+
+        .imgFood {
+            width: 100%;
+            height: 70%;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                @include img;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                opacity: .2;
+                border-radius: 10px;
+
+            }
+        }
+
+        .foodName {
+            font-size: 1.5rem;
+            color: $main;
+            padding: 15px 8px 10px 0px;
+            @media (max-width:991px){
+                font-size: 1.2rem;
+            }
+        }
+
+        &:hover {
+            .imgFood {
+                &::before {
+                    animation: overlayAB .5s forwards ease-in-out;
+                }
+
+                &::after {
+
+                    animation: overlayAB 1s forwards ease-in-out;
+                }
+            }
+        }
+    }
+
+    // 
+    .sidebar {
+        padding-right: 15px;
+
+        .formSide {
+            width: 100%;
+            max-width: 100%;
+            height: 48px;
+            position: relative;
+            margin-bottom: 5vh;
+
+            input {
+                @include input;
+                border-color: rgb(103, 119, 122);
+                background-color: transparent;
+            }
+
+            button {
+                position: absolute;
+                left: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 6px 10px;
+                border-radius: 5px;
+                border: 1px solid rgb(103, 119, 122);
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    i {
+                        color: $hover;
+                    }
+                }
+
+                i {
+                    color: $hoverD;
+                    font-size: 1.4rem;
+                }
+
+
+            }
+
+            input:focus~button {
+                border: 1px solid $hover;
+            }
+        }
+
+        // 
+        .importantLink {
+            // border: 1px solid $borderColor;
+            padding: 16px 15px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            background-color: $borderColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2vh;
+
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100000px;
+                height: 100000px;
+                // background: linear-gradient(90deg, transparent 0%, hsla(202, 90%, 56%, 1) 100%);
+                background-image: conic-gradient(transparent, transparent, transparent, #28a9f4);
+                animation: line360 5s linear infinite;
+                border-radius: 16px;
+
+
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100000px;
+                height: 100000px;
+                background-image: conic-gradient(transparent, transparent, transparent, #f428e0);
+                animation: line360 5s linear infinite;
+                animation-delay: -2s;
+                border-radius: 16px;
+
+            }
+
+
+            @keyframes line360 {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .line360 {
+                background-color: #f4f4f4;
+                position: absolute;
+                inset: 3px;
+                z-index: 1;
+                border-radius: 5px;
+            }
+
+
+
+            .LinkBox {
+
+                width: 100%;
+                position: relative;
+                z-index: 10;
+                
+
+                h6 {
+                    font-size: 1.5rem;
+                    color: $hoverD;
+                    font-weight: 600;
+                    margin-bottom: 2vh;
+                }
+
+                .IMPL {
+
+
+                    li {
+                        padding-bottom: 1.5vh;
+                        font-size: 1.1rem;
+                        font-weight: 300;
+
+                        a {
+                            color: #000;
+                            transition: $transition;
+
+                            &:hover {
+                                color: $hoverD;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+
+    }
+
+}
+
+@include overlayAB;

@@ -1,0 +1,373 @@
+@use './colors' as *;
+
+@mixin input {
+    width: 100%;
+    height: 48px;
+    padding-right: 10px;
+    max-width: 100%;
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: $transition;
+
+    &:focus {
+        outline: none;
+        border: 1px solid $hover;
+        background-color: #f3f1f1;
+    }
+}
+
+// overlay background
+@mixin overlay ($color , $alpha) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color, $alpha);
+}
+
+// mainHeading
+@mixin mainHeading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 8vh;
+}
+
+// heading tittle
+@mixin tittle {
+    position: relative;
+    font-size: 36px;
+    color: $main;
+    padding: 8px;
+
+    @media (max-width:280px) {
+        font-size: 28px;
+        padding: 2px;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        // background: linear-gradient(90deg, hsla(205, 63%, 53%, 1) 0%, hsla(185, 68%, 77%, 1) 99%);
+        transition: $transition;
+
+        @media (max-width:280px) {
+            width: 20px;
+            height: 20px;
+        }
+
+    }
+
+    &::before {
+        border-top: 2px solid $hover;
+        border-left: 2px solid $hover;
+        left: -15px;
+        top: -5px;
+    }
+
+    &::after {
+        border-bottom: 2px solid $hover;
+        border-right: 2px solid $hover;
+        right: -15px;
+        bottom: -5px;
+    }
+
+    &:hover {
+
+        &::before,
+        &::after {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        &::before {
+            left: 3px;
+            top: 3px;
+
+        }
+
+        &::after {
+            right: 3px;
+            bottom: 3px;
+        }
+
+    }
+}
+
+// ****big
+@mixin tittle2 {
+    font-size: 2.6rem;
+    position: relative;
+    font-weight: 600;
+    color: $main;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: rgba($color: rgba(232, 232, 232, 0.474), $alpha: 1.0);
+        box-shadow: 0 0 5px rgba($color: #000000, $alpha: .1) inset;
+        border-radius: 5px;
+        bottom: -20px;
+    }
+
+    &::after {
+        content: '';
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: $hover;
+        position: absolute;
+        bottom: -28px;
+        box-shadow: 0 0 20px 1px rgba($color: #ff6161, $alpha: .1);
+        animation: Circle 6s ease-in-out infinite;
+    }
+
+    @keyframes Circle {
+        0% {
+            right: -20px;
+        }
+
+        50% {
+            right: 100%;
+        }
+
+        100% {
+            right: -20px;
+        }
+    }
+
+    span {
+        color: $hover;
+    }
+
+    @media (max-width:767px) {
+        font-size: 2rem;
+    }
+}
+
+// small
+@mixin tittleS2 {
+    font-size: 1.5rem;
+    position: relative;
+    // font-weight: 600;
+    color: $hover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: rgba($color: rgba(232, 232, 232, 0.474), $alpha: 1.0);
+        box-shadow: 0 0 5px rgba($color: #000000, $alpha: .1) inset;
+        border-radius: 5px;
+        bottom: -20px;
+    }
+
+    &::after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $hover;
+        position: absolute;
+        bottom: -24px;
+        box-shadow: 0 0 20px 1px rgba($color: #ff6161, $alpha: .1);
+        animation: Circle 6s ease-in-out infinite;
+    }
+
+    @keyframes Circle {
+        0% {
+            right: -20px;
+        }
+
+        50% {
+            right: 100%;
+        }
+
+        100% {
+            right: -20px;
+        }
+    }
+
+    span {
+        color: $hover;
+    }
+
+    @media (max-width:767px) {
+        font-size: 1rem;
+    }
+}
+
+// img
+@mixin img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // border-radius: 10px;
+}
+
+// section
+@mixin section ($height) {
+    width: 100%;
+    min-height: $height;
+    padding-top: $MTsection;
+}
+
+// center flex
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+// center margin
+@mixin MarginCenter {
+    margin-left: auto;margin-right: auto;
+}
+
+// key frames 
+//  arrow-Right
+@mixin arrow-Right ($name) {
+    @keyframes #{$name} {
+        0% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(5px);
+        }
+    }
+}
+
+// 
+@mixin overlayAB {
+    @keyframes overlayAB {
+        0% {
+
+            left: -100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        100% {
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+}
+
+// overlayAB2
+@mixin overlayAB2 ($names) {
+    @keyframes #{$names} {
+        0% {
+
+            right: -100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        50% {
+            right: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        100% {
+
+            right: 100%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// rota 360deg
+
+@mixin rotate ($name) {
+    @keyframes #{$name} {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+// rotateCircle
+@mixin rotateCircle ($name) {
+    @keyframes #{$name} {
+        from {
+            transform: translate(-50%, -50%) rotate(0);
+        }
+
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+}
+
+// ball move
+@mixin circleMove ($name){
+    @keyframes #{$name} {
+            0% {
+                transform: translate3d(0, 0, 0) rotate(0deg);
+            }
+    
+            20% {
+                transform: translate3d(150px, 350px, 0) rotate(360deg);
+            }
+    
+            40% {
+                transform: translate3d(300px, 50px, 0) rotate(0deg);
+            }
+    
+            60% {
+                transform: translate3d(450px, 350px, 0) rotate(360deg);
+            }
+    
+            80% {
+                transform: translate3d(600px, 50px, 0) rotate(0deg);
+            }
+    
+            100% {
+                transform: translate3d(750px, 350px, 0) rotate(360deg);
+            }
+    
+    
+        }
+}
+// scale
+@mixin scale ($name){
+    @keyframes #{$name} {
+            0% {
+                transform: scale(1);
+            }
+    
+            40% {
+                transform: scale(1.1);
+            }
+    
+            80% {
+                transform: scale(.9);
+            }
+    
+            100% {
+                transform: scale(1);
+            }
+        }
+}

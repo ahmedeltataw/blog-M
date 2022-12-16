@@ -1,0 +1,46 @@
+@use './layout/global';
+@use  './pages/header';
+@use './pages/home';
+@use './pages/footer';
+@use './pages/CategoriesPage';
+@use './pages/detailsCategories';
+@use './pages/ِ_AboutUs.scss';
+@use './pages/Library';
+@use './pages/DetailsLibrary';
+// 
+@media (max-width: 480px) {
+
+    /* Global */
+    body {
+        font-size: 12px !important;
+    }
+
+    h1 {
+        font-size: 22px !important;
+    }
+
+    h2 {
+        font-size: 18px !important;
+    }
+
+    h3 {
+        font-size: 17px !important;
+    }
+
+    h4 {
+        font-size: 16px !important;
+    }
+
+    h5 {
+        font-size: 15px !important;
+    }
+
+    h6 {
+        font-size: 14px !important;
+    }
+
+    a,
+    p , td , li{
+        font-size: 13px !important;
+    }
+}

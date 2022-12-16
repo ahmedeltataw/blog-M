@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/img/logo.png" alt="logo">
+      </a>
+      <ul class="navbar-nav  mb-2 mb-lg-0">
+        <!-- home -->
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="index.html"> <i class="fa-light fa-house-chimney"> </i>  الرئيسية </a>
+        </li>
+        <!-- Categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="CategoriesPage.html"> <i class="fa-thin fa-clipboard"></i>  التصنيفات </a>
+        </li>
+        <!-- about us -->
+        <li class="nav-item">
+          <a class="nav-link" href="AboutUs.html"> <i class="fa-thin fa-handshake-angle"></i>  من نحن </a>
+        </li>
+        <!-- search -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#"> <i class="fa-thin fa-screwdriver-wrench"></i>  معايير التدقيق </a>
+        </li> -->
+        <!-- Library -->
+        <li class="nav-item">
+          <a class="nav-link" href="Library.html"> <i class="fa-thin fa-book"></i>   مكتبة </a>
+        </li>
+        <!-- Contact us -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">  <i class="fa-thin fa-headset"></i>   اتصل بنا </a>
+        </li>
+      </ul>
+      
+        <!-- icon menu -->
+        <div class="iconNavbar">
+          <span></span>
+          <span class="SpanActive"></span>
+          <span></span>
+        </div>
+    </div>
+  </nav>
+
+  <!--  responsive header -->
+  <div class="navbarResponsive ">
+
+    <div class="navbar2">
+
+        <ul>
+          <!-- home -->
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="index.html"> <i class="fa-light fa-house-chimney"> </i> الرئيسية </a>
+        </li>
+        <!-- Categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="CategoriesPage.html"> <i class="fa-thin fa-clipboard"></i>  التصنيفات </a>
+        </li>
+        <!-- about us -->
+        <li class="nav-item">
+          <a class="nav-link" href="AboutUs.html"> <i class="fa-thin fa-handshake-angle"></i>  من نحن </a>
+        </li>
+        <!-- search -->
+        <li class="nav-item">
+          <a class="nav-link" href="#"> <i class="fa-thin fa-screwdriver-wrench"></i> معايير التدقيق </a>
+        </li>
+        <!-- Library -->
+        <li class="nav-item">
+          <a class="nav-link" href="Library.html"> <i class="fa-thin fa-book"></i>  مكتبة </a>
+        </li>
+        <!-- Contact us -->
+        <li class="nav-item">
+          <a class="nav-link" href="#"> <i class="fa-thin fa-headset"></i>  اتصل بنا </a>
+        </li>
+        </ul>
+                <!-- icon menu -->
+        <div class="iconNavbarX">
+          <span></span>
+          <span class="SpanActive"></span>
+          <span></span>
+        </div>
+    </div>
+  </div>
+  <!-- script -->
+  <script>
+    // NAVBAR RESPONSIVE
+      $('.iconNavbar').click(function () {
+        $('.iconNavbar span').addClass('active')
+        $('.navbarResponsive').animate({
+          right: 0,
+        }, 100)
+      })
+      $('.iconNavbarX').click(function () {
+        $('.iconNavbar span').removeClass('active')
+        $('.navbarResponsive').animate({
+          right: '-100vw',
+        }, 100)
+      })
+      // navbar fixed 
+      $(window).scroll(function () {
+        if ($(window).scrollTop() >= 100) {
+
+          $(".navbar").addClass('scroll')
+          $(".navbar-brand").addClass('scroll')
+          $(".nav-link").addClass('scroll')
+          $("body").addClass('scroll')
+          $('.iconNavbar span').addClass('scroll')
+
+        } else {
+
+          $(".navbar").removeClass('scroll')
+          $(".navbar-brand").removeClass('scroll')
+          $(".nav-link").removeClass('scroll')
+          $("body").removeClass('scroll')
+          $('.iconNavbar span').removeClass('scroll')
+        }
+      })
+  </script>
+
+
